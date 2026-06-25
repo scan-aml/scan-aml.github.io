@@ -1,1 +1,24 @@
-{"name": "Chainsift — Crypto AML Scan", "short_name": "Chainsift", "start_url": "/", "display": "standalone", "background_color": "#0A1014", "theme_color": "#0A1014", "icons": [{"src": "assets/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"}, {"src": "assets/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}]}
+{
+  "name": "Scan AML",
+  "short_name": "Scan AML",
+  "description": "Scan AML scans a crypto wallet address for AML and sanctions risk before you transact.",
+  "start_url": "https://scan-aml.github.io/",
+  "scope": "https://scan-aml.github.io/",
+  "display": "standalone",
+  "background_color": "#F7F8F6",
+  "theme_color": "#16A34A",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
