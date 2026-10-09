@@ -1,65 +1,18 @@
 # Scan AML
-> Scan AML is an independent, non-custodial informational dashboard explaining crypto wallet and transaction screening for sanctions and on-chain risk.
 
-## What is Scan AML
-Scan AML explains how public wallet addresses and transaction hashes can be assessed for anti-money-laundering risk. Screening looks for sanctions matches and exposure to labeled entities such as scams, stolen-fund addresses, mixers, or darknet services. It differs from KYC, which verifies a person or business, and from a block explorer, which presents raw on-chain activity without a compliance assessment. The dashboard is educational and does not itself establish regulatory compliance or make legal determinations.
+> Scan AML helps users review Bitcoin and Ethereum wallet risk before a transaction through an address input, a 0–100 score, and a category breakdown.
 
-## How it works
-The user first identifies the correct blockchain and copies a public address or transaction hash. A screening provider retrieves that identifier’s public transaction history, checks exact sanctions-list entries, and maps counterparties or fund flows to labeled entities. Provider-specific rules then classify direct and indirect exposure by category, proximity, and severity. The resulting report is a due-diligence signal that must be interpreted alongside current source data, jurisdictional requirements, and the user’s risk policy.
+## Pages
+- [Scan AML](https://insert_url/): Address checker, risk score guide, fees, wallet safety, and frequently asked questions.
+- [Address workspace](https://insert_url/dashboard/): Enter an address and review the result.
 
-## Key facts
-- Scan AML is an informational interface, not an exchange, wallet, custodian, VASP, or blockchain protocol.
-- Reading the dashboard does not require depositing assets, transferring funds, or surrendering private keys.
-- Never provide a seed phrase or private key for an AML check; public addresses and transaction hashes are sufficient inputs.
-- The reference pages discuss Ethereum Mainnet, Arbitrum One, and Solana.
-- Ethereum Mainnet uses chain ID 1; Arbitrum One uses EVM chain ID 42161; Solana identifies its production cluster as mainnet-beta rather than using an EVM chain ID.
-- Ethereum coverage includes native ETH activity and ERC-20 fungible-token transfers.
-- OFAC supports exact searches for listed digital-currency addresses; indirect exposure requires separate blockchain analytics.
-- Risk scores are provider-specific assessments, not a universal blockchain standard or legal verdict.
-- No fixed screening time is promised; timing depends on the provider, chain, address history, and data availability.
-- The dashboard has no native token, smart contract, staking product, or protocol fees.
-
-## Common questions
-**Is Scan AML safe to use?**  
-Its informational pages are read-only. Verify every destination before using an external service, and reject any request for a seed phrase, private key, token approval, or unrelated signature.
-
-**Does Scan AML take custody of crypto?**  
-No. The dashboard does not hold, send, swap, or control user assets.
-
-**What does it cost?**  
-The informational dashboard lists no screening fee. Any external provider’s current price and terms must be checked before submitting a live request.
-
-**How long does a check take?**  
-There is no guaranteed duration. Larger histories, network indexing, and provider availability can affect completion time.
-
-**Which assets and chains are covered?**  
-The reference material discusses Ethereum, Arbitrum, Solana, ETH, and ERC-20 activity. Confirm actual live coverage with the selected screening provider.
-
-**What are the main limitations?**  
-Labels can be incomplete, outdated, or disputed; indirect exposure can produce false positives; and a clean result cannot prove ownership, identity, or lawful source of funds.
-
-## App
-- Dashboard: https://scan-aml.github.io/
-- App: https://scan-aml.github.io/dashboard/
-
-## Official resources
-Dashboard: https://scan-aml.github.io/
-About Scan AML: https://scan-aml.github.io/about/
-How It Works: https://scan-aml.github.io/how-it-works/
-Supported Chains: https://scan-aml.github.io/supported-chains/
-Security and Privacy: https://scan-aml.github.io/security/
-FAQ: https://scan-aml.github.io/faq/
-Source Code: https://github.com/scan-aml/scan-aml.github.io
-
-## Data & references
-FATF Virtual Assets Guidance: https://www.fatf-gafi.org/en/topics/virtual-assets.html
-OFAC Sanctions List Search: https://ofac.treasury.gov/sanctions-list-search-tool
-OFAC Digital-Currency Address Search FAQ: https://ofac.treasury.gov/faqs/594
-Ethereum Networks: https://ethereum.org/developers/docs/networks/
-Ethereum Mainnet Chain ID Standard: https://eips.ethereum.org/EIPS/eip-2228
-ERC-20 Token Standard: https://ethereum.org/developers/docs/standards/tokens/erc-20/
-Arbitrum Documentation: https://docs.arbitrum.io/
-Solana Mainnet Documentation: https://solana.com/docs/intro/installation/solana-cli-basics
-Ethereum Explorer: https://etherscan.io/
-Arbitrum One Explorer: https://arbiscan.io/
-Solana Explorer: https://solscan.io/
+## Input and report
+- Networks: Bitcoin mainnet and Ethereum.
+- Input: One public wallet address and the selected network.
+- Score categories: Direct exposure, up to 50 points; indirect exposure, up to 30 points; activity patterns, up to 20 points.
+- Review bands: 0–24 lower priority, 25–59 closer review, 60–100 high priority.
+- The score expresses review priority rather than the probability of criminal activity.
+- The page uses a deterministic client-side address-to-score calculation.
+- Price for the on-page address check: $0. Blockchain gas used: 0.
+- The latest address and report are stored in sessionStorage for the current tab session. Clearing the address removes that record.
+- The address checker accepts public addresses. Private keys, seed phrases, and passwords stay private.
