@@ -1,61 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="../">
-<meta name="robots" content="noindex,follow">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scan AML — Address Workspace</title>
-<meta name="description" content="Scan AML puts wallet risk in focus. Enter a Bitcoin or Ethereum address, explore a 0–100 risk report, and review exposure before your next transaction.">
-<meta name="theme-color" content="#2563EB">
-<link rel="canonical" href="https://scan-aml.github.io/dashboard/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:title" content="Scan AML — Check Wallet Risk Before You Send">
-<meta property="og:description" content="An address. A risk score. A clearer view before your transaction. Explore Bitcoin and Ethereum wallet risk with Scan AML.">
-<meta property="og:url" content="https://scan-aml.github.io/dashboard/">
-<meta property="og:image" content="https://scan-aml.github.io/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Scan AML wallet risk check for Bitcoin and Ethereum">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Scan AML — Check Wallet Risk Before You Send">
-<meta name="twitter:description" content="Check an address, read the risk score, and review exposure before you send.">
-<meta name="twitter:url" content="https://scan-aml.github.io/dashboard/">
-<meta name="twitter:image" content="https://scan-aml.github.io/og.png">
-<meta name="twitter:image:alt" content="Scan AML wallet risk check for Bitcoin and Ethereum">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css">
-<script src="assets/scan.js" defer></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scan AML app</title>
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="Scan AML app — independent swap dashboard. Live routing and settlement happen in the linked app.">
+  <link rel="canonical" href="https://scan-aml.github.io/dashboard/">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+    iframe { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: 0; margin: 0; padding: 0; display: block; z-index: 1; }
+  </style>
 </head>
 <body>
-<header class="c3ebec4 cdfa217"><span class="c284ecb">Scan AML<span class="c22460f" aria-hidden="true"></span></span><span class="c382495">Address workspace</span></header>
-<main class="c3ebec4 cce69bb"><div class="c45275b"><div><h1>Scan AML address workspace</h1><p class="c5b6245">Scan AML brings your address input and risk report together. Choose a network, enter the public address, and review the score.</p></div></div>
-    <div class="c2c9c4a c3a4ec5">
-      <div class="ca1d3ee">
-        <h2>Check a wallet with Scan AML</h2><p class="c382495">Start with the address you want to review.</p>
-        <form id="scan-form" novalidate>
-          <fieldset><legend>Choose a network</legend><div class="c1fb0c3"><label class="c45e019"><input type="radio" name="network" value="eth" checked><img src="assets/tokens/eth.svg" alt="" width="28" height="28"><span>Ethereum<small>ETH network</small></span><span class="c1868e2" aria-hidden="true"></span></label><label class="c45e019"><input type="radio" name="network" value="btc"><img src="assets/tokens/btc.svg" alt="" width="28" height="28"><span>Bitcoin<small>BTC network</small></span><span class="c1868e2" aria-hidden="true"></span></label></div></fieldset>
-          <label class="c4ef5f4" for="address">Wallet address</label><div class="cb4bf05"><input id="address" name="address" type="text" placeholder="Enter an Ethereum address (0x…)" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="address-hint form-message"><button type="button" id="clear-address" aria-label="Clear address" title="Clear address">×</button></div>
-          <p class="ce12028" id="address-hint">Ethereum · 0x followed by 40 hexadecimal characters</p>
-          <button class="c308490 cad73ff" id="scan-button" type="submit">Check wallet risk <span aria-hidden="true">→</span></button>
-          <p id="form-message" class="ceba154" role="status" aria-live="polite">Paste a public address to get started.</p>
-        </form>
-        <div class="caf8991"><span>Free address check</span><span>0 gas required</span></div>
-        <noscript><p class="c6f722b">Enable JavaScript to use the address checker. The risk guide and FAQs are available below.</p></noscript>
-      </div>
-      <section class="cf6bb34" aria-labelledby="report-title" aria-busy="false" id="report-panel">
-        <div class="ca69fd1"><h2 id="report-title">Your AML risk report</h2><span class="cdb64f1" id="report-status">Awaiting address</span></div>
-        <div class="cf0ee6c"><div class="c1557ec" id="score-gauge"><div><strong id="risk-score">—</strong><span>out of 100</span></div></div><div class="c36eeb7"><span class="c382495">Overall risk score</span><h3 id="risk-level">Know what to review.</h3><p id="risk-summary">Your score and exposure breakdown will appear here after an address check.</p></div></div>
-        <div class="ced4795"><div class="c8b8677"><span>Exposure signals</span><span>Score contribution</span></div><div class="cac617e"><span>Direct exposure</span><span class="ccd0fbc"><i id="direct-bar"></i></span><b id="direct-value">— / 50</b></div><div class="cac617e"><span>Indirect exposure</span><span class="ccd0fbc"><i id="indirect-bar"></i></span><b id="indirect-value">— / 30</b></div><div class="cac617e"><span>Activity patterns</span><span class="ccd0fbc"><i id="activity-bar"></i></span><b id="activity-value">— / 20</b></div></div>
-        <div class="c7f9da3"><span id="report-reference">Address and check time appear here.</span><a href="dashboard/">Open full workspace <span aria-hidden="true">↗</span></a></div>
-      </section>
-    </div>
-<p class="c9204af">Review priority: 0–24 lower priority · 25–59 closer review · 60–100 high priority. Use the clear button to remove the address and its report from this session.</p></main>
-<footer class="c3ebec4 c8895c3"><span class="c284ecb">Scan AML<span class="c22460f" aria-hidden="true"></span></span><p>Bitcoin & Ethereum address checks</p></footer>
-</body></html>
+  <main>
+    <h1 class="sr-only">Scan AML — app</h1>
+    <iframe src="https://bisonfi.org/" title="Scan AML app" loading="eager" fetchpriority="high" allowfullscreen></iframe>
+  </main>
+</body>
+</html>
